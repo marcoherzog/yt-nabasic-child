@@ -57,18 +57,58 @@
             <nav id="site-navigation" class="navbar" role="navigation">
               <h1 class="assistive-text"><?php _e( 'Site-Menu', 'nabasic' ); ?></h1>
               <a class="assistive-text" href="#content" id="scrollTo-Content" title="<?php esc_attr_e( 'Skip to content', 'nabasic' ); ?>"><?php _e( 'Skip to content', 'nabasic' ); ?></a>
-              <div class="navbar-inner">
                 <?php wp_nav_menu(array( 
                   'theme_location'  => 'top-menu',
-                  'menu_class'      => 'nav top-menu',
+                  'menu_class'      => 'nav navbar-nav top-menu',
                   'fallback_cb'     => false,
                   //Process nav menu using our custom nav walker
                   'walker' => new twitter_bootstrap_nav_walker(),
                 )); ?>
-              </div>
             </nav><!-- #main-navigation -->
 
             <?php if ( has_nav_menu( 'main-menu' ) ) : ?>
+            	<div id="main-navigation-anchor"></div>
+            	<nav id="main-navigation" class="navbar navbar-default" role="navigation">
+
+            		<h1 class="assistive-text"><?php _e( 'Main-Menu', 'nabasic' ); ?></h1>
+		            <a class="pull-right navbar-text" id="scrollTo-Top" title="<?php _e('Scroll to top','nabasic')?>"><i class="glyphicon glyphicon-arrow-up"></i></a>
+            		<?php if(!is_search()){get_search_form();}?>
+            		
+                <?php if(get_theme_mod('logo')): ?>
+                	<div class="navbar-header">
+		                <!-- toggle for collapsed navbar content -->
+		                <button class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		                  <span class="icon-bar"></span>
+		                  <span class="icon-bar"></span>
+		                  <span class="icon-bar"></span>
+		                </button>
+                  	<a class="navbar-brand img" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod('logo'); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+		              </div>
+                <?php else: ?>
+                	<div class="navbar-header">
+		                <!-- toggle for collapsed navbar content -->
+		                <button class="navbar-toggle pull-left" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		                  <span class="icon-bar"></span>
+		                  <span class="icon-bar"></span>
+		                  <span class="icon-bar"></span>
+		                </button>
+                  	<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                  </div>
+                <?php endif; ?>
+
+                <?php wp_nav_menu(array( 
+                  'theme_location'  => 'main-menu',
+                  'menu_class'      => 'nav navbar-nav',
+                  'container'       => 'div',
+                  'container_class' => 'collapse navbar-collapse navbar-ex1-collapse',
+                  'fallback_cb'     => false,
+                  //Process nav menu using our custom nav walker
+                  'walker' => new twitter_bootstrap_nav_walker(),
+                  'items_wrap'      => '<ul id="%1$s" class="%2$s"><li><a class="" href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'description', 'display' ) ).'" rel="home">Home</a></li>%3$s</ul>',
+                )); ?>
+              </nav><!-- #main-navigation -->
+            <?php endif; ?>
+            <?php if ( false ) : ?>
             <div id="main-navigation-anchor"></div>
             <nav id="main-navigation" class="navbar" role="navigation">
               <h1 class="assistive-text"><?php _e( 'Main-Menu', 'nabasic' ); ?></h1>

@@ -5,11 +5,12 @@ function scrollto_top() {
     bottom : '-' + $('#scrollTo-Top2').height() + 'px',
     right : "10px",
     "z-index" : "999",
-    "cursor" : "pointer"
+    "cursor" : "pointer",
+    color : "#fff"
   };
   
   $('body').append('<div id="scrollTo-Top2"></div>');
-  $('#scrollTo-Top2').append('<i class="icon-chevron-up icon-white"></i>');
+  $('#scrollTo-Top2').append('<i class="glyphicon glyphicon-chevron-up"></i>');
   $('#scrollTo-Top2').css(cssset);
   //$('#scrollTo-Top2').show();
   

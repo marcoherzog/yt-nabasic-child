@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * changelog to parent theme
+ * added images to sidebar / related articles
+ */
+
+
+get_header(); ?>
 
           <?php
             $sidebar1 = false;

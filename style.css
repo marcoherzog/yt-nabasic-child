@@ -28,7 +28,7 @@ margin-top: 1em;
 #masthead .page-header h1 {
 padding-top: 1em;
 }
-#main-navigation .navbar-inner {
+#main-navigation {
 background: none;
 border: none;
   -webkit-box-shadow: none;
@@ -38,18 +38,18 @@ border: none;
      -moz-border-radius: 0;
           border-radius: 0;
 }
-#main-navigation .navbar-inner > div > ul {
+#main-navigation > div > ul {
 padding-left:3em;
 }
-#main-navigation .navbar-inner > div > ul > li {
+#main-navigation > div > ul > li {
 border-right: 2px solid #aaa;
 padding: 0 6px;
 }
-#main-navigation .navbar-inner > div > ul > li:last-child,
-#main-navigation .navbar-inner > div > ul > li.last {
+#main-navigation > div > ul > li:last-child,
+#main-navigation > div > ul > li.last {
 border-right: none;
 }
-#main-navigation .navbar-inner > div > ul > li > a {
+#main-navigation > div > ul > li > a {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
@@ -57,14 +57,14 @@ color: #333;
 font-size: 24px;
 padding: 6px 12px;
 }
-#main-navigation .navbar-inner > div > ul > li > a:hover, 
-#main-navigation .navbar-inner > div > ul > li > a:focus {
+#main-navigation > div > ul > li > a:hover, 
+#main-navigation > div > ul > li > a:focus {
 color: #e50051;
 }
 
-#main-navigation .navbar-inner > div > ul > .active > a, 
-#main-navigation .navbar-inner > div > ul > .active > a:hover, 
-#main-navigation .navbar-inner > div > ul > .active > a:focus {
+#main-navigation > div > ul > .active > a, 
+#main-navigation > div > ul > .active > a:hover, 
+#main-navigation > div > ul > .active > a:focus {
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
@@ -204,12 +204,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80eaeaea', e
 /* single */
 @media all {
 
-body.single div.meta-tags span.badge-info {
+body.single div.meta-tags span.badge {
 background-color: transparent;
 padding-left: 2px;
 padding-right: 0;
 }
-body.single div.meta-tags span.badge-info a {
+body.single div.meta-tags span.badge a {
 background-color: #e50051;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -217,8 +217,8 @@ background-color: #e50051;
 border: 1px solid #e50051;
 padding: 5px 8px;
 }
-body.single div.meta-tags span.badge-info a:hover,
-body.single div.meta-tags span.badge-info a:focus {
+body.single div.meta-tags span.badge a:hover,
+body.single div.meta-tags span.badge a:focus {
 background-color: #eee;
 color: #e50051;
 text-shadow: none;
